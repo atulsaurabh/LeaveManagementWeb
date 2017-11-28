@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link th:href="@{/css/style-common.css}"  rel="stylesheet"  type="text/css"/>
+    <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/js/formmanupulation.js}"></script>
+    <link rel="stylesheet" th:href="@{/js/jquery-ui/jquery-ui.css}" type="text/css"/>
+    <script type="text/javascript" th:src="@{/js/jquery-ui/jquery-ui.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery-design.js}"></script>
+
+</head>
+<body>
+<div id="maincontainer" >
+    <div th:replace="headerfooter :: #header"></div>
+    <div th:replace="twosidepanel_employeemaster :: masterpage"></div>
+    <div th:replace="headerfooter ::  #footer"></div>
+</div>
+</body>
+</html>

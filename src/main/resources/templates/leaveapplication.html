@@ -1,0 +1,80 @@
+<div align="center" style="position: absolute;width: 75%">
+
+        <table>
+            <tr>
+                <td>
+                    <form th:action="@{/leaveoperation/applyleave.do}" th:method="post" th:object="${employeeandleave}">
+                    <table>
+                        <tr>
+                            <td th:text="#{employeemaster.bodypanel.employee.id}">Employee ID</td>
+                            <td><input type="text" th:value="*{employee.employeeid}" th:field="*{employee.employeeid}" readonly="readonly"/> </td>
+                        </tr>
+                        <tr>
+                            <td th:text="#{employeemaster.bodypanel.employee.name}">Employee Name</td>
+                            <td><input type="text" th:value="*{employee.employeename}" th:field="*{employee.employeename}" readonly="readonly"/> </td>
+                        </tr>
+                        <tr>
+                            <td th:text="#{leavemaster.bodypanel.leaveapplication.fromdate}">From Date</td>
+                            <td><input type="text"  th:field="*{leaveApplication.fromDate}" id="fromDate"/> </td>
+                        </tr>
+                        <tr>
+                            <td th:text="#{leavemaster.bodypanel.leaveapplication.todate}">To Date</td>
+                            <td><input type="text" th:field="*{leaveApplication.toDate}" th:onblur="'javascript:calculateNumberofDays()'" id="toDate"/> </td>
+                        </tr>
+                        <tr>
+                            <td th:text="#{leavemaster.bodypanel.leaveapplication.halfday}">Half Day</td>
+                            <td><input type="checkbox" th:value="1" th:field="*{leaveApplication.halfdayApplicable}" id="halfday" th:onclick="'javascript:processHalfDay()'"/> </td>
+                        </tr>
+                        <tr>
+                            <td th:text="#{leavemaster.bodypanel.leaveapplication.first.halfday}">First Day As Half</td>
+                            <td><input type="checkbox" th:value="1" th:field="*{leaveApplication.firstDayAsHalfDay}" /> </td>
+                        </tr>
+                        <tr>
+                            <td th:text="#{leavemaster.bodypanel.leaveapplication.noofdays}">No of Days</td>
+                            <td><input type="text"  th:field="*{leaveApplication.noofdays}" readonly="readonly" id="noofdays" /> </td>
+                        </tr>
+                        <tr>
+                            <td th:text="#{leavemaster.bodypanel.leaveapplication.leaves}">Leave Types</td>
+                            <td>
+                                <table>
+                                    <tr th:each="leave :${employeeandleave.employee.leaves}">
+                                        <td><label th:text="${leave.leaveCatagory.abbriviation}"/><input type="radio" th:field="*{leaveid}" th:value="${leave.leaveid}"/></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td th:text="#{leavemaster.bodypanel.leaveapplication.reason}">Reason</td>
+                            <td><textarea th:field="*{leaveApplication.reason}"></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right">
+                                <button type="submit">Approve</button>
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
+                </td>
+                  <td style="text-align: start">
+                      <table>
+                          <tr>
+                              <td>
+                                  <hr width="1" size="340"/>
+                              </td>
+                              <td>
+                                  <table>
+                                      <tr>
+                                          <td colspan="2" align="center">Current Balance</td>
+                                      </tr>
+                                      <tr th:each="lv :${employeeandleave.employee.leaves}">
+                                          <td th:text="${lv.leaveCatagory.abbriviation}"></td>
+                                          <td><input type="text" th:value="${lv.balance}" readonly="readonly"/></td>
+                                      </tr>
+                                  </table>
+                              </td>
+                          </tr>
+                      </table>
+                </td>
+            </tr>
+        </table>
+</div>

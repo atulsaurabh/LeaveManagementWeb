@@ -1,0 +1,13 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div id="header" align="center" th:fragment="headerfragment">
+    <h2 align="center" th:text="#{homepage.banner.text}"></h2>
+    <div th:if="${catagory_add_message}" th:text="${catagory_add_message}" align="center" class="error" id="msgcollector">&nbsp;</div>
+    <hr class="divider"/>
+</div>
+
+<div id="footer" th:fragment="footerfragment">
+    <hr />
+    <p align="right" th:text="#{homepage.footer.developer}">
+    </p>
+</div>
+</html>

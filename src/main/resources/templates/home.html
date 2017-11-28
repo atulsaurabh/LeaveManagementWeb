@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+   <link th:href="@{/css/style-common.css}"  rel="stylesheet"  type="text/css"/>
+</head>
+<body>
+
+ <div id="maincontainer" >
+     <div th:replace="headerfooter :: #header"></div>
+     <div th:replace="loginscreen :: loginpage"></div>
+     <div th:replace="headerfooter ::  #footer"></div>
+
+ </div>
+</body>
+</html>

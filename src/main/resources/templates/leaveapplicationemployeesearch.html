@@ -1,0 +1,13 @@
+<div align="right">
+
+    <table>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.id}">Employee Id</td>
+            <td><input type="text" id="employeeid" /></td>
+            <td><button type="button" th:text="#{employeemaster.bodypanel.employee.search}" th:onclick="'javascript:fetchEmployeeRecord()'">Search</button></td>
+        </tr>
+    </table>
+    <hr/>
+</div>
+
+<div id="search_result">&nbsp;</div>

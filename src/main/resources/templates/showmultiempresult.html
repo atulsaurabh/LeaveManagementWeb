@@ -1,0 +1,20 @@
+ <hr/>
+    <table style="border: solid thin">
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.id}" style="border: solid thin">Employee ID</td>
+            <td th:text="#{employeemaster.bodypanel.employee.name}" style="border: solid thin">Employee Name</td>
+            <td th:text="#{employeemaster.bodypanel.employee.dept}" style="border: solid thin">Department</td>
+            <td th:text="#{employeemaster.bodypanel.employee.cat}" style="border: solid thin">Type</td>
+            <td th:text="#{employeemaster.bodypanel.employee.doj}" style="border: solid thin">DOJ</td>
+            <td style="border: solid thin">Action</td>
+
+        </tr>
+        <tr th:each="employee: ${employeelist}" style="border: solid thin">
+            <td th:text="${employee.employeeid}" style="border: solid thin"></td>
+            <td th:text="${employee.employeename}" style="border: solid thin"></td>
+            <td th:text="${employee.department.departmentabbriviation}" style="border: solid thin"></td>
+            <td th:text="${employee.catagory.abbriviation}" style="border: solid thin"></td>
+            <td th:text="${employee.dateofjoing}" style="border: solid thin"></td>
+            <td style="border: solid thin"><a href="#" th:text="#{employeemaster.bodypanel.employee.update}" th:onclick="'javascript:sendDataForSingleEmployeeSearch(0,\''+${employee.employeeid}+'\')'">Update</a></td>
+        </tr>
+    </table>

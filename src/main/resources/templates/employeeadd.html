@@ -1,0 +1,50 @@
+<form th:action="@{/employeeoperation/employeeadd.do}" th:method="post" th:object="${employeedto}" th:fragment="searchform">
+    <table>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.name}">Employee Name</td>
+            <td><input type="text" th:field="*{employeename}" th:value="*{employeename}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.id}">Employee ID</td>
+            <td><input type="text" th:field="*{employeeid}" th:value="*{employeeid}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.doj}">DOJ</td>
+            <td><input type="text" th:field="*{dateofjoing}" th:value="*{dateofjoing}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.dept}">Employee Department</td>
+            <td>
+                <select th:field="*{departmentid}">
+                <option th:each="dept : ${departmentlist}" th:text="${dept.departmentabbriviation}" th:value="${dept.departmentid}"/>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.cat}">Employee Catagory</td>
+            <td>
+                <select th:field="*{employeecatagoryid}">
+                    <option th:each="cat : ${catagorylist}" th:text="${cat.abbriviation}" th:value="${cat.catagoryid}"/>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">Leave Assignment</td>
+        </tr>
+        <th:block th:each="leavecat: ${leavecatagorylist}">
+        <tr>
+            <td><label th:text="${leavecat.abbriviation}"></label></td>
+
+                <td>
+                    <input type="text" th:field="*{allowednoleaves}" size="5"/>
+                    <br/>
+                </td>
+        </tr>
+        </th:block>
+        <tr>
+            <td align="right" colspan="2">
+                <button type="submit" th:text="#{employeemaster.bodypanel.employee.add}">Add Employee</button>
+            </td>
+        </tr>
+    </table>
+</form>

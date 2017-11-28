@@ -1,0 +1,52 @@
+<hr />
+<form th:action="@{/employeeoperation/employeeupdate.do}" th:method="post" th:object="${employee}">
+    <table>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.name}">Employee Name</td>
+            <td><input type="text" th:field="*{employeename}" th:value="*{employeename}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.id}">Employee ID</td>
+            <td><input type="text" th:field="*{employeeid}" th:value="*{employeeid}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.doj}">DOJ</td>
+            <td><input type="text" th:field="*{dateofjoing}" th:value="*{dateofjoing}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.dept}">Employee Department</td>
+            <td>
+                <select th:field="*{departmentid}" id="department-list">
+                    <option th:each="dept : ${departmentlist}" th:text="${dept.departmentabbriviation}" th:value="${dept.departmentid}" th:attrif="${employee.departmentid == dept.departmentid} ? selected='selected' : '' "/>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.cat}">Employee Catagory</td>
+            <td>
+                <select th:field="*{employeecatagoryid}">
+                    <option th:each="cat : ${catagorylist}" th:text="${cat.abbriviation}" th:value="${cat.catagoryid}" th:attrif="${employee.employeecatagoryid == cat.catagoryid} ? selected='selected' : '' "/>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">Leave Assignment</td>
+        </tr>
+        <th:block th:each="leavecat: ${employee.leaves}">
+            <tr>
+                <td><label th:text="${leavecat.leaveCatagory.abbriviation}"></label></td>
+
+                <td>
+
+                    <input type="text" name="allowednoleaves" size="5" th:value="${leavecat.totalApplicable}"/>
+                    <br/>
+                </td>
+            </tr>
+        </th:block>
+        <tr>
+            <td align="right" colspan="2">
+                <button type="submit" th:text="#{employeemaster.bodypanel.employee.update}">Update Employee</button>
+            </td>
+        </tr>
+    </table>
+</form>

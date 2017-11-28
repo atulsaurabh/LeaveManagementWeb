@@ -1,0 +1,17 @@
+<form th:action="@{/employeeoperation/createcatagory.do}" th:method="post" th:object="${catagory}">
+    <table>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.catagory.name}">Employee Catagory</td>
+            <td><input type="text" th:field="*{catagoryname}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.catagory.abbr}">Catagory Abbriviation</td>
+            <td><input type="text" th:field="*{abbriviation}"/> </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="2">
+                <button type="submit" th:text="#{employeemaster.bodypanel.catagory.add}">Add Catagory</button>
+            </td>
+        </tr>
+    </table>
+</form>

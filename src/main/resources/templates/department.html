@@ -1,0 +1,17 @@
+<form th:action="@{/employeeoperation/createdepartment.do}" th:method="post" th:object="${department}">
+    <table>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.department.name}">Department Name</td>
+            <td><input type="text" th:field="*{departmentname}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.department.abbriviation}">Department Abbriviation</td>
+            <td><input type="text" th:field="*{departmentabbriviation}"/> </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="2">
+                <button type="submit" th:text="#{employeemaster.bodypanel.department.add}">Add Department</button>
+            </td>
+        </tr>
+    </table>
+</form>

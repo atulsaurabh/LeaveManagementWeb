@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link th:href="@{/css/style-common-leave.css}"  rel="stylesheet"  type="text/css"/>
+    <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/js/formmanupulation.js}"></script>
+    <script type="text/javascript" th:src="@{/js/util.js}"></script>
+</head>
+<body>
+
+<div id="maincontainer" >
+    <div th:replace="headerfooter :: #header"></div>
+    <div th:replace="twosidepanel_leavemaster :: masterpage"></div>
+    <div th:replace="headerfooter ::  #footer"></div>
+</div>
+</body>
+</html>

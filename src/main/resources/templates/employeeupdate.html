@@ -1,0 +1,15 @@
+<div>
+
+    <table>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.employee.id}">Employee Id</td>
+            <td><input type="text" id="employeeid" /></td>
+            <td><label th:text="#{employeemaster.bodypanel.employee.include}">Indclude all</label>:<input type="checkbox" value="1" id="include"/></td>
+            <td><button type="button" th:text="#{employeemaster.bodypanel.employee.search}" th:onclick="'javascript:loadEmployeeSearchResult()'">Search</button></td>
+            <td><a href="#">Advanced Search</a> </td>
+        </tr>
+    </table>
+
+</div>
+
+<div id="search_result">&nbsp;</div>

@@ -1,0 +1,25 @@
+<form th:action="@{/leaveoperation/createcatagory.do}" th:method="post" th:object="${leavecatagory}">
+    <table>
+        <tr>
+            <td th:text="#{employeemaster.bodypanel.catagory.name}">Employee Catagory</td>
+            <td><input type="text" th:field="*{catagoryname}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{leavemaster.bodypanel.catagory.abbr}">Catagory Abbriviation</td>
+            <td><input type="text" th:field="*{abbriviation}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{leavemaster.bodypanel.catagory.carryforwardaftersixmonth}">Six Month Carry Forward</td>
+            <td><input type="checkbox" th:field="*{carryForwarded}"/> </td>
+        </tr>
+        <tr>
+            <td th:text="#{leavemaster.bodypanel.catagory.carryforwardafteroneyear}">One Year Carry Forward</td>
+            <td><input type="checkbox" th:field="*{accumulated}"/> </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="2">
+                <button type="submit" th:text="#{leavemaster.bodypanel.catagory.add}">Add Catagory</button>
+            </td>
+        </tr>
+    </table>
+</form>
