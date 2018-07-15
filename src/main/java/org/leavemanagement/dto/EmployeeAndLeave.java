@@ -8,6 +8,8 @@ public class EmployeeAndLeave
     private Employee employee;
     private LeaveApplication leaveApplication;
     private int leaveid;
+    private String searchcriteria;
+    private String [] days;
 
     public Employee getEmployee() {
         return employee;
@@ -31,5 +33,21 @@ public class EmployeeAndLeave
 
     public void setLeaveid(int leaveid) {
         this.leaveid = leaveid;
+    }
+
+    public String  getSearchcriteria() {
+        return searchcriteria;
+    }
+
+    public void setSearchcriteria(String  searchcriteria) {
+        this.searchcriteria = searchcriteria;
+    }
+
+    public String[] getDays() {
+        return days;
+    }
+
+    public void setDays(String[] days) {
+        this.days = days;
     }
 }

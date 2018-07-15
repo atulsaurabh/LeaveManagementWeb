@@ -1,4 +1,4 @@
- <hr/>
+<!-- <hr/>
     <table style="border: solid thin">
         <tr>
             <td th:text="#{employeemaster.bodypanel.employee.id}" style="border: solid thin">Employee ID</td>
@@ -18,3 +18,31 @@
             <td style="border: solid thin"><a href="#" th:text="#{employeemaster.bodypanel.employee.update}" th:onclick="'javascript:sendDataForSingleEmployeeSearch(0,\''+${employee.employeeid}+'\')'">Update</a></td>
         </tr>
     </table>
+-->
+
+<div class="col-md-12">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th th:text="#{employeemaster.bodypanel.employee.id}">Employee Id	</th>
+                <th th:text="#{employeemaster.bodypanel.employee.name}">Employee Name</th>
+                <th th:text="#{employeemaster.bodypanel.employee.dept}">Employee Department	</th>
+                <th th:text="#{employeemaster.bodypanel.employee.cat}">Employee Catagory	</th>
+                <th th:text="#{employeemaster.bodypanel.employee.doj}">Date of Joining	</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee: ${employeelist}">
+                <td th:text="${employee.employeeid}">E00521</td>
+                <td th:text="${employee.employeename}">ZOYEB A SHAIKH</td>
+                <td th:text="${employee.department.departmentabbriviation}">CE</td>
+                <td th:text="${employee.catagory.abbriviation}">AT</td>
+                <td th:text="${employee.dateofjoing}">21/08/1990</td>
+                <td><a href ="#" th:text="#{employeemaster.bodypanel.employee.update}" th:onclick="'javascript:sendDataForEmployeeSearch(0,\''+${employee.employeeid}+'\',\''+${employee.department.departmentid}+'\')'">Update Employee</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

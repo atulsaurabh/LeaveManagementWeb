@@ -7,6 +7,7 @@ import java.util.List;
 public class EmployeeUpdateDTO
 {
     private String employeeid;
+    private String oldemployeeid;
     private String employeename;
     private String dateofjoing;
     private int employeecatagoryid;
@@ -70,5 +71,13 @@ public class EmployeeUpdateDTO
 
     public void setAllowednoleaves(float[] allowednoleaves) {
         this.allowednoleaves = allowednoleaves;
+    }
+
+    public String getOldemployeeid() {
+        return oldemployeeid;
+    }
+
+    public void setOldemployeeid(String oldemployeeid) {
+        this.oldemployeeid = oldemployeeid;
     }
 }

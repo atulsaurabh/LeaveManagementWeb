@@ -1,4 +1,25 @@
-<form th:action="@{/employeeoperation/createdepartment.do}" th:method="post" th:object="${department}">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    <form class="bootstrap-form-with-validation" th:action="@{/employeeoperation/createdepartment.do}" th:method="post" th:object="${department}" onsubmit="return validateDepartmentAddForm()">
+        <h2 class="text-center">Add Department</h2>
+        <div class="form-group">
+            <label class="control-label" for="departmentname" th:text="#{employeemaster.bodypanel.department.name}">Department Name </label>
+            <input class="form-control" type="text" name="text-input" id="departmentname" th:field="*{departmentname}"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="shortform" th:text="#{employeemaster.bodypanel.department.abbriviation}">Department Abbriviation </label>
+            <input class="form-control" type="text" name="text-input" id="shortform" th:field="*{departmentabbriviation}"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" th:text="#{employeemaster.bodypanel.department.add}">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="col-md-4"></div>
+
+
+
+<!-- <form th:action="@{/employeeoperation/createdepartment.do}" th:method="post" th:object="${department}">
     <table>
         <tr>
             <td th:text="#{employeemaster.bodypanel.department.name}">Department Name</td>
@@ -14,4 +35,4 @@
             </td>
         </tr>
     </table>
-</form>
+</form> -->

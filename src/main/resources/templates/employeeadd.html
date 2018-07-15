@@ -1,4 +1,65 @@
-<form th:action="@{/employeeoperation/employeeadd.do}" th:method="post" th:object="${employeedto}" th:fragment="searchform">
+<form   class="bootstrap-form-with-validation" th:action="@{/employeeoperation/employeeadd.do}" form="Empadd" th:method="post" th:object="${employeedto}" th:fragment="searchform">
+
+
+<div class="col-md-6">
+
+        <h2 class="text-center">Add Employee </h2>
+        <div class="form-group">
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.old}">OLD EMPLOYEE</label>
+            <input class="form-control" type="checkbox" name="text-input" id="text-input" th:field="*{oldEmployee}" value="1"/>
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.name}">Employee Name </label>
+            <input class="form-control" type="text" name="text-input" id="text-input" th:field="*{employeename}" th:value="*{employeename}"/>
+
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.id}">Employee Id </label>
+            <input class="form-control" type="text" name="text-input" id="text-input" th:field="*{employeeid}" th:value="*{employeeid}"/>
+
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.doj}">Date of Joining </label>
+            <input class="form-control"  type="text" name="text-input" id="datepicker" th:field="*{dateofjoing}" th:value="*{dateofjoing}"/>
+
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.dept}">Employee Department </label>
+            <select th:field="*{departmentid}" class="form-control">
+                <option th:each="dept : ${departmentlist}" th:text="${dept.departmentabbriviation}" th:value="${dept.departmentid}"/>
+            </select>
+
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.cat}">Employee Catagory </label>
+            <select th:field="*{employeecatagoryid}" class="form-control">
+                <option th:each="cat : ${catagorylist}" th:text="${cat.abbriviation}" th:value="${cat.catagoryid}"/>
+            </select>
+        </div>
+
+
+</div>
+
+<div class="col-md-6">
+    <h2 class="text-center">Leave Assigment</h2>
+    <div class="form-group" th:each="leavecat: ${leavecatagorylist}">
+        <label class="control-label" for="text-input" th:text="${leavecat.abbriviation}">Date of Joining </label>
+        <input class="form-control" type="text"  id="text-input" th:value="${leavecat.commonvalue}" name="allowednoleaves" />
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit" th:text="#{employeemaster.bodypanel.employee.add}">Submit </button>
+    </div>
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<form th:action="@{/employeeoperation/employeeadd.do}" th:method="post" th:object="${employeedto}" th:fragment="searchform">
     <table>
         <tr>
             <td th:text="#{employeemaster.bodypanel.employee.name}">Employee Name</td>
@@ -47,4 +108,4 @@
             </td>
         </tr>
     </table>
-</form>
+</form>-->

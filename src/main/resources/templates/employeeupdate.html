@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 
     <table>
         <tr>
@@ -12,4 +12,51 @@
 
 </div>
 
-<div id="search_result">&nbsp;</div>
+<div id="search_result">&nbsp;</div> -->
+
+
+<div class="row">
+   <div class="col-md-2"><hr/></div>
+    <div class="col-md-4">
+        <hr/>
+        <div class="form-group has-error has-feedback">
+            <label class="control-label" for="employeeid">Search Employee</label>
+            <div class="input-group">
+                <div class="input-group-addon"><span> <img th:src="@{/images/icon.png}"/><i class="glyphicon glyphicon-search"></i></span></div>
+                <input class="form-control" type="text"  id="employeeid"/>
+            </div><i class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></i></div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-3">
+                <hr/>
+                <hr/>
+                <div>
+                    <label>Department</label>
+                    <select class="form-control" id="departments">
+                       <option th:each="dept : ${departments}" th:value="${dept.departmentid}" th:text="${dept.departmentabbriviation}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <hr/>
+                <hr/>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="1" id="include"/><strong th:text="#{employeemaster.bodypanel.employee.include}">Include All</strong></label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <hr/>
+                <hr/>
+                <button class="btn btn-info" type="button" th:text="#{employeemaster.bodypanel.employee.search}" th:onclick="'javascript:loadEmployeeSearchResult()'">Submit </button>
+            </div>
+            <div class="col-md-4">
+            <hr/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="search_result">
+
+</div>

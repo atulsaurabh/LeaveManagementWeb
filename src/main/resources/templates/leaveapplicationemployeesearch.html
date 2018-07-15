@@ -1,13 +1,17 @@
-<div align="right">
-
-    <table>
-        <tr>
-            <td th:text="#{employeemaster.bodypanel.employee.id}">Employee Id</td>
-            <td><input type="text" id="employeeid" /></td>
-            <td><button type="button" th:text="#{employeemaster.bodypanel.employee.search}" th:onclick="'javascript:fetchEmployeeRecord()'">Search</button></td>
-        </tr>
-    </table>
-    <hr/>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="employeeid" th:text="#{employeemaster.bodypanel.employee.id}">Search Employee</label>
+            <div class="input-group">
+                <div class="input-group-addon"><span> <i class="glyphicon glyphicon-search"></i></span></div>
+                <input  class="form-control" type="search" name="search-input" id="employeeid" th:onkeypress="'javascript:fetchEmployeeRecord(event,'+${#dates.month(#dates.createNow())}+')'"/>
+            </div>
+        </div>
+    </div>
 </div>
-
+<!-- <form class="bootstrap-form-with-validation">
+    <div class="form-group"></div>
+</form> -->
 <div id="search_result">&nbsp;</div>

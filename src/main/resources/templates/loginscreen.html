@@ -1,24 +1,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<div id="body" align="center" th:fragment="loginpage">
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p th:if="${loginError}" th:text="${loginError}" class="error">&nbsp;</p>
-    <form th:action="@{/login.do}" th:method="post" th:object="${user}">
-        <table>
-            <tr>
-                <td th:text="#{homepage.login.username}">User Name</td>
-                <td><input type="text" th:field="*{username}"/></td>
-            </tr>
-            <tr>
-                <td th:text="#{homepage.login.password}">Password</td>
-                <td><input type="password" th:field="*{password}" /></td>
-            </tr>
-            <tr>
-                <td align="left"><a th:href="@{/forgotpassword.do}" style="text-decoration: none" th:text="#{homepage.login.forgot_password}"></a> </td>
-                <td align="right"><button type="submit" th:text="#{homepage.login.button.caption}"></button> </td>
-            </tr>
-        </table>
-    </form>
+<div class="login-card" th:fragment="loginpage"><img th:src="@{/js/assets/img/bit_logo.png}" class="profile-img-card" />
+    <p class="profile-name-card"> </p>
+    <form class="form-signin" th:action="@{/login.do}" th:method="post" th:object="${user}"><span class="reauth-email"> </span>
+        <input class="form-control" type="text" required="" placeholder="Email address" autofocus="" id="inputEmail" th:field="*{username}"/>
+        <input class="form-control" type="password" required="" placeholder="Password" id="inputPassword" th:field="*{password}"/>
+        <div class="checkbox"></div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="roll"/> Admin</label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="roll"/> Guest Admin</label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" />Remember me</label>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit" th:text="#{homepage.login.button.caption}">Sign in</button>
+    </form><a href="#" class="forgot-password" th:text="#{homepage.login.forgot_password}">Forgot your password?</a>
 </div>
 </html>

@@ -1,4 +1,4 @@
-<hr />
+<!--<hr />
 <form th:action="@{/employeeoperation/employeeupdate.do}" th:method="post" th:object="${employee}">
     <table>
         <tr>
@@ -49,4 +49,46 @@
             </td>
         </tr>
     </table>
+</form> -->
+
+<form  class="bootstrap-form-with-validation" th:action="@{/employeeoperation/employeeupdate.do}" th:method="post" th:object="${employee}" th:fragment="searchform">
+    <div class="col-md-6">
+
+        <h2 class="text-center">Update Employee </h2>
+        <div class="form-group">
+            <input type="hidden" th:field="*{oldemployeeid}" value="*{oldemployeeid}"/>
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.name}">Employee Name </label>
+            <input class="form-control" type="text" name="text-input" id="text-input" th:field="*{employeename}" th:value="*{employeename}"/>
+
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.id}">Employee Id </label>
+            <input class="form-control" type="text" name="text-input" id="text-input" th:field="*{employeeid}" th:value="*{employeeid}"/>
+
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.doj}">Date of Joining </label>
+            <input class="form-control" placeholder="dd/MM/yyyy" type="text" name="text-input" id="text-input" th:field="*{dateofjoing}" th:value="*{dateofjoing}"/>
+
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.dept}">Employee Department </label>
+            <select th:field="*{departmentid}" class="form-control">
+                <option th:each="dept : ${departmentlist}" th:text="${dept.departmentabbriviation}" th:value="${dept.departmentid}"/>
+            </select>
+
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.employee.cat}">Employee Catagory </label>
+            <select th:field="*{employeecatagoryid}" class="form-control">
+                <option th:each="cat : ${catagorylist}" th:text="${cat.abbriviation}" th:value="${cat.catagoryid}"/>
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="col-md-6">
+        <h2 class="text-center">Leave Assigment</h2>
+        <div class="form-group" th:each="leavecat: ${employee.leaves}">
+            <label class="control-label" for="text-input" th:text="${leavecat.leaveCatagory.abbriviation}">Date of Joining </label>
+            <input class="form-control" type="text" name="allowednoleaves" id="text-input" th:value="${leavecat.totalApplicable}"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" th:text="#{employeemaster.bodypanel.employee.update}">Submit </button>
+        </div>
+    </div>
+
 </form>

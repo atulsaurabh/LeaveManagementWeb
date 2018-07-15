@@ -8,6 +8,7 @@ public class EmployeeDTO {
     private int employeecatagoryid;
     private int departmentid;
     private float [] allowednoleaves;
+    private boolean oldEmployee;
 
     public String getEmployeename() {
         return employeename;
@@ -57,4 +58,11 @@ public class EmployeeDTO {
         this.allowednoleaves = allowednoleaves;
     }
 
+    public boolean isOldEmployee() {
+        return oldEmployee;
+    }
+
+    public void setOldEmployee(boolean oldEmployee) {
+        this.oldEmployee = oldEmployee;
+    }
 }

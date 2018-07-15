@@ -1,5 +1,7 @@
 package org.leavemanagement.entity;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ public class Employee
     private Department department;
     private List<EmployeeLeave> leaves = new ArrayList<>();
     private List<LeaveApplication> leaveApplications = new ArrayList<>();
+    private String status;
     @Id
     public String getEmployeeid() {
         return employeeid;
@@ -46,6 +49,7 @@ public class Employee
 
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "emp_cat")
+    @Cascade(org.hibernate.annotations.CascadeType.REMOVE)
     public EmployeeCatagory getCatagory() {
         return catagory;
     }
@@ -56,6 +60,7 @@ public class Employee
 
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "emp_dept")
+    @Cascade(org.hibernate.annotations.CascadeType.REMOVE)
     public Department getDepartment() {
         return department;
     }
@@ -64,11 +69,12 @@ public class Employee
         this.department = department;
     }
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
     @JoinTable(
             joinColumns = @JoinColumn(name = "employeeid"),
             inverseJoinColumns = @JoinColumn(name = "leaveid")
     )
+    @Cascade(org.hibernate.annotations.CascadeType.REMOVE)
     public List<EmployeeLeave> getLeaves() {
         return leaves;
     }
@@ -79,16 +85,25 @@ public class Employee
     }
 
 
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true,fetch =FetchType.EAGER)
     @JoinTable(
             joinColumns = @JoinColumn(name = "employeeid"),
             inverseJoinColumns = @JoinColumn(name = "leaveapplicationid")
     )
+    @Cascade({org.hibernate.annotations.CascadeType.REMOVE})
     public List<LeaveApplication> getLeaveApplications() {
         return leaveApplications;
     }
 
     public void setLeaveApplications(List<LeaveApplication> leaveApplications) {
         this.leaveApplications = leaveApplications;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

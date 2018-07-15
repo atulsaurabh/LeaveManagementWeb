@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-   <link th:href="@{/css/style-common.css}"  rel="stylesheet"  type="text/css"/>
-</head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>LogIn</title>
+        <script th:src="@{/js/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/js/assets/bootstrap/js/bootstrap.min.js}"></script>
+        <link rel="stylesheet" th:href="@{/js/assets/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie"/>
+        <link rel="stylesheet" th:href="@{/js/ssets/fonts/font-awesome.min.css}"/>
+        <link rel="stylesheet" th:href="@{/js/assets/css/styles.css}"/>
+        <link rel="stylesheet" th:href="@{/js/assets/css/Google-Style-Login.css}"/>
+        <link rel="stylesheet" th:href="@{/js/assets/css/Pretty-Footer.css}"/>
+        <link rel="stylesheet" th:href="@{/js/assets/css/Pretty-Registration-Form.css}"/>
+        <link rel="stylesheet" th:href="@{/js/assets/css/Pretty-Header.css}"/>
+    </head>
 <body>
 
  <div id="maincontainer" >
      <div th:replace="headerfooter :: #header"></div>
      <div th:replace="loginscreen :: loginpage"></div>
      <div th:replace="headerfooter ::  #footer"></div>
-
  </div>
 </body>
 </html>

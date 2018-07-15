@@ -1,4 +1,29 @@
-<form th:action="@{/employeeoperation/createcatagory.do}" th:method="post" th:object="${catagory}">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    <form class="bootstrap-form-with-validation" th:action="@{/employeeoperation/createcatagory.do}" th:method="post" th:object="${catagory}" onsubmit="return validateEmployeeCatagoryAddForm()">
+        <h2 class="text-center" >Employee Catagory</h2>
+        <div class="form-group">
+            <label class="control-label" for="catagoryname" th:text="#{employeemaster.bodypanel.catagory.name}">Catagory Name </label>
+            <input class="form-control" type="text" name="text-input" id="catagoryname" th:field="*{catagoryname}"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="abbr" th:text="#{employeemaster.bodypanel.catagory.abbr}">Catagory Abbriviation </label>
+            <input class="form-control" type="text" name="text-input" id="abbr" th:field="*{abbriviation}"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" th:text="#{employeemaster.bodypanel.catagory.add}">Submit </button>
+        </div>
+    </form>
+</div>
+<div class="col-md-4"></div>
+
+
+
+
+
+
+
+<!-- <form th:action="@{/employeeoperation/createcatagory.do}" th:method="post" th:object="${catagory}">
     <table>
         <tr>
             <td th:text="#{employeemaster.bodypanel.catagory.name}">Employee Catagory</td>
@@ -14,4 +39,4 @@
             </td>
         </tr>
     </table>
-</form>
+</form> -->

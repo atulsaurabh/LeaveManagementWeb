@@ -6,9 +6,10 @@ import javax.persistence.*;
 public class EmployeeLeave
 {
     private int leaveid;
-    private LeaveCatagory leaveCatagory;
+    private LeaveCatagory leaveCatagory ;
     private float totalApplicable;
     private float balance;
+    private float borrow;
 
 
     @Id
@@ -47,4 +48,11 @@ public class EmployeeLeave
         this.balance = balance;
     }
 
+    public float getBorrow() {
+        return borrow;
+    }
+
+    public void setBorrow(float borrow) {
+        this.borrow = borrow;
+    }
 }

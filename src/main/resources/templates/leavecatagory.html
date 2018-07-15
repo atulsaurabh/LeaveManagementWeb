@@ -1,4 +1,43 @@
-<form th:action="@{/leaveoperation/createcatagory.do}" th:method="post" th:object="${leavecatagory}">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    <form class="bootstrap-form-with-validation" th:action="@{/leaveoperation/createcatagory.do}" th:method="post" th:object="${leavecatagory}">
+        <h2 class="text-center">Add Leaves Catagory</h2>
+        <div class="form-group">
+            <label class="control-label" for="text-input" th:text="#{employeemaster.bodypanel.catagory.name}">Leaves Catagory </label>
+            <input class="form-control" type="text" name="text-input" id="text-input" th:field="*{catagoryname}"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="text-input" th:text="#{leavemaster.bodypanel.catagory.abbr}">Leaves Catagory Abbriviation </label>
+            <input class="form-control" type="text" name="text-input" id="text-input" th:field="*{abbriviation}"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="text-input" th:text="#{leavemaster.bodypanel.catagory.default}">Default Value</label>
+            <input class="form-control" type="text" name="text-input" id="text-input" th:field="*{commonvalue}"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="text-input" th:text="#{leavemaster.bodypanel.catagory.carryforwardaftersixmonth}">Leaves Catagory Abbriviation </label>
+            <input class="form-control" type="checkbox" name="text-input" id="text-input" th:field="*{carryForwarded}"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="text-input" th:text="#{leavemaster.bodypanel.catagory.carryforwardafteroneyear}">Leaves Catagory Abbriviation </label>
+            <input class="form-control" type="checkbox" name="text-input" id="text-input" th:field="*{accumulated}"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" th:text="#{leavemaster.bodypanel.catagory.add}">Submit </button>
+        </div>
+    </form>
+</div>
+<div class="col-md-4"></div>
+
+
+
+
+
+
+
+
+
+<!-- <form th:action="@{/leaveoperation/createcatagory.do}" th:method="post" th:object="${leavecatagory}">
     <table>
         <tr>
             <td th:text="#{employeemaster.bodypanel.catagory.name}">Employee Catagory</td>
@@ -23,3 +62,4 @@
         </tr>
     </table>
 </form>
+-->

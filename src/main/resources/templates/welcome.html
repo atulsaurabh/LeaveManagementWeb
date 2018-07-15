@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-    <link th:href="@{/css/style-common.css}"  rel="stylesheet"  type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LogIn</title>
+    <script th:src="@{/js/assets/js/jquery.min.js}"></script>
+    <script th:src="@{/js/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/js/assets/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie"/>
+    <link rel="stylesheet" th:href="@{/js/asets/fonts/font-awesome.min.css}"/>
+    <link rel="stylesheet" th:href="@{/js/assets/css2/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/js/assets/css2/Google-Style-Login.css}"/>
+    <link rel="stylesheet" th:href="@{/js/assets/css2/Pretty-Footer.css}"/>
+    <link rel="stylesheet" th:href="@{/js/assets/css2/Material-Card.css}"/>
+    <link rel="stylesheet" th:href="@{/js/assets/css2/Mockup-MacBook-Pro.css}"/>
+    <link rel="stylesheet" th:href="@{/js/assets/css2/Pretty-Header.css}"/>
+    <script type="text/javascript" th:src="@{/js/formmanupulation.js}"></script>
+    <script type="text/javascript" th:src="@{/js/util.js}"></script>
+    <link rel="stylesheet" th:href="@{/js/jquery-ui/jquery-ui.css}"/>
+    <script th:src="@{/js/jquery-ui/external/jquery/jquery.js}"></script>
+    <script th:src="@{/js/jquery-ui/jquery-ui.js}"></script>
+    <script th:src="@{/js/validation.js}"></script>
+
 </head>
-<body>
-
-<div id="maincontainer" >
-    <div th:replace="headerfooter :: #header"></div>
-    <div th:replace="twosidepanel :: masterpage"></div>
-    <div th:replace="headerfooter ::  #footer"></div>
-
+<body class="claro">
+<div id="maincontainer" class="container">
+    <div th:replace="innerheaderfooter :: #innerheader"></div>
+    <div th:replace="twosidepanel"></div>
+   <div th:replace="innerheaderfooter ::  #footer"></div>
 </div>
 </body>
 </html>

@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div id="body" th:fragment="masterpage">
-    <div style="border:solid thin black;width: 150px;height:63.4%;position:absolute;left:10px;">
-        <table>
-            <tr>
-                <td><a th:href="@{/leavemanagement/home.do}" th:text="#{welcomepage.masterpanel.homepage}">Home</a> </td>
-            </tr>
-            <tr>
-                <td><a th:href="@{/leavemanagement/employeemaster.do}" th:text="#{welcomepage.masterpanel.employeemaster}">Employee Master</a> </td>
-            </tr>
-            <tr>
-                <td><a th:href="@{/leavemanagement/leavemaster.do}" th:text="#{welcomepage.masterpanel.leavemaster}">Leave Master</a> </td>
-            </tr>
-            <tr>
-                <td><a th:href="@{/}" th:text="#{welcomepage.masterpanel.logout}">Logout</a> </td>
-            </tr>
-        </table>
-    </div>
-    <div style="border:solid thin black;width: 86.26vw; height:100%;position:relative;left:153px;">&nbsp;</div>
+<div  class="alert alert-success text-nowrap text-uppercase text-center show" role="alert"><span><strong th:text="${catagory_add_message}" id="catagory_add_message">Reduce Cost with a Leave Management SystemPurpose-Built Workforce Management Solutions</strong> </span></div>
+<div class="row" id="placeholder">
+
 </div>
-</html>
